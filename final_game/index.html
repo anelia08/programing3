@@ -4,11 +4,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.14/p5.js"></script>
     <script src="script.js"></script>
    </head>
    <body>
-     
+     <div class="gameInfo">
+      <h1 class="h1GameInfo">Game Description</h1>
+      <div class="characters">
+         <h2 class="charactInfo">Charecter Description</h2>
+         <p class="grassInfo">Grass- </p>
+         <p class="grassEatInfo">GrassEater- </p>
+         <p class="predInfo">Predator- </p>
+         <p class="floInfo">Flower- </p>
+         <p class="regenInfo">Regenerator- </p>
+      </div>
+      <div class="seasons">
+         <h2 class="seasonInfo">Seasons</h2>
+         <p class="winter">Winter-</p>
+         <p class="spring">Spring- </p>
+         <p class="summer">Summer- </p>
+         <p class="fall">Fall- </p>
+      </div>
+     </div>
+     <div class="controlPanel">
+        <h1 class="control">Control Panel</h1>
+      <div class="buttons">
+          <div class="button" onclick="AddGrass()">
+               <p class="addGrass">Add Grass</p>
+          </div>
+          <div class="button" onclick="AddGrassEater()">
+               <p class="addGrassEat">Add GrassEater</p>
+          </div>
+          <div class="button" onclick="AddPredator()">
+               <p class="addPred">Add Predator</p>
+          </div>
+          <div class="button" onclick="AddFlower()">
+               <p class="addFlo">Add Flower</p>
+          </div>
+          <div class="button" onclick="AddRegenerator()">
+                <p class="addRegen">Add Regenerator</p>
+          </div>
+          <div class="button" onclick="winter()">
+                <p class="winter">Winter</p>
+          </div>
+          <div class="button" onclick="spring()">
+                <p class="spring">Spring</p>
+          </div>
+          <div class="button" onclick="summer()">
+                <p class="summer">Summer</p>
+          </div>
+          <div class="button" onclick="fall()">
+                <p class="fall">Fall</p>
+          </div>
+          <div class="button" onclick="kill()">
+            <p class="kill">Kill All</p>
+      </div>
+      </div>
+   </div>
    </body>
 </html>
