@@ -2,7 +2,7 @@ var socket = io();
 
 
 
-let side = 20;
+var side = 20;
 
 
 
@@ -19,40 +19,85 @@ function setup() {
 
 }
 
-
+socket.on("Weather", function (data) {
+    weath = data;
+    console.log(weath);
+})
 
 
 
 function nkarel(matrix) {
     for (var y = 0; y < matrix.length; y++) {
         for (var x = 0; x < matrix[y].length; x++) {
-
-            if (matrix[y][x] == 1) {
-                fill("green");
+            var obj = matrix[y][x];
+            if(obj == 1){
+                if(weath == "winter"){
+                    fill("white")
+                }
+                if(weath == "spring"){
+                    fill("#8FBC8F")
+                }
+                if(weath == "summer"){
+                    fill("green")
+                }
+                if(weath == "fall"){
+                    fill("#556b2f")
+                }
             }
-            else if (matrix[y][x] == 0) {
-                fill("#acacac");
-            }
-            else if (matrix[y][x] == 2) {
-                fill("yellow");
-            }
-            else if (matrix[y][x] == 3) {
-                fill("red");
-            }
-            else if (matrix[y][x] == 4) {
-                fill("pink");
-            }
-            else if (matrix[y][x] == 5) {
-                fill("#4169E1");
-            }
-            rect(x * side, y * side, side, side);
 
 
+            if(obj == 2){
+                if(weath == "winter"){
+                    fill("#cccc00")
+                }
+                if(weath == "spring"){
+                    fill("#ffff66")
+                }
+                if(weath == "summer"){
+                    fill("yellow")
+                }
+                if(weath == "fall"){
+                    fill("#ffb84d")
+                }
+            }
 
+
+            if(matrix[y][x] == 3){
+                if(weath == "winter"){
+                    fill("#800000")
+                }
+                if(weath == "spring"){
+                    fill("#ff4d4d")
+                }
+                if(weath == "summer"){
+                    fill("red")
+                }
+                if(weath == "fall"){
+                    fill("#b30000")
+                }
+            }
+
+
+            
+          if(matrix[y][x] == 4){
+            if(weath == "winter"){
+                fill("#b30059")
+            }
+            if(weath == "spring"){
+                fill("#ff3385")
+            }
+            if(weath == "summer"){
+                fill("pink")
+            }
+            if(weath == "fall"){
+                fill("#ed0c66")
+            }
         }
-    }
-}
+            rect(x * side, y * side, side, side);
+            }
+        }
 
+}
 
 socket.on('send matrix', nkarel)
 
@@ -74,3 +119,6 @@ function AddFlower(){
 function AddRegenerator(){
     socket.emit("Add Regenerator")
 }
+function weather(){
+ socket.emit("Weather")
+} 

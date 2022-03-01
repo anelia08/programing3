@@ -72,6 +72,7 @@ flowerArr = []
 regeneratorArr = []
 
 
+weath  = "winter";
 
 Grass = require("./Grass")
 GrassEater = require("./GrassEater")
@@ -79,7 +80,7 @@ Predator = require("./Predator")
 Flower = require("./Flower")
 Regenerator = require("./Regenerator")
 
-
+matrixSize = 25;
 
 
 
@@ -175,7 +176,7 @@ function AddGrassEater(){
     for (let i = 0; i < 1; i++) {
         let x = Math.floor(Math.random() * matrixSize);;
         let y = Math.floor(Math.random() * matrixSize);;
-        matrix[y][x] = 1;
+        matrix[y][x] = 2;
     }
     for (let y = 0; y < matrix.length; y++) {
         for (let x = 0; x < matrix[y].length; x++) {
@@ -195,7 +196,7 @@ function AddPredator(){
     for (let i = 0; i < 1; i++) {
         let x = Math.floor(Math.random() * matrixSize);;
         let y = Math.floor(Math.random() * matrixSize);;
-        matrix[y][x] = 1;
+        matrix[y][x] = 3;
     }
     for (let y = 0; y < matrix.length; y++) {
         for (let x = 0; x < matrix[y].length; x++) {
@@ -215,7 +216,7 @@ function AddFlower(){
     for (let i = 0; i < 1; i++) {
         let x = Math.floor(Math.random() * matrixSize);;
         let y = Math.floor(Math.random() * matrixSize);;
-        matrix[y][x] = 1;
+        matrix[y][x] = 4;
     }
     for (let y = 0; y < matrix.length; y++) {
         for (let x = 0; x < matrix[y].length; x++) {
@@ -235,7 +236,7 @@ function AddRegenerator(){
     for (let i = 0; i < 1; i++) {
         let x = Math.floor(Math.random() * matrixSize);;
         let y = Math.floor(Math.random() * matrixSize);;
-        matrix[y][x] = 1;
+        matrix[y][x] = 5;
     }
     for (let y = 0; y < matrix.length; y++) {
         for (let x = 0; x < matrix[y].length; x++) {
@@ -249,8 +250,27 @@ function AddRegenerator(){
     }
     io.sockets.emit('send matrix', matrix);
 }
+ 
 
 
+function weather(){
+    if(weath == "winter"){
+        weath = "spring"
+    }
+    else if (weath == "spring"){
+        weath = "summer"
+    }
+    else if (weath == "summer"){
+        weath = "fall"
+    }
+    else if (weath == "fall"){
+        weath = "winter"
+    }
+    console.log(weath);
+    io.sockets.emit('Weather', weath)
+}
+
+setInterval(weather, 5000)
 
 
 io.on('connection', function (socket) {
@@ -261,5 +281,6 @@ io.on('connection', function (socket) {
     socket.on("Add Flower", AddFlower);
     socket.on("Add Regenerator", AddRegenerator);
     socket.on("Kill All", kill);
+    socket.on("Weather", weather)
 });
 

@@ -41,5 +41,17 @@ module.exports = class Regenerator extends LivingCreature{
             var newPredator = new Predator(newX, newY);
             predatorArr.push(newPredator);
         }
+
+
+        if(weath == "winter"){
+            this.energy += 3
+        }
+        if(weath == "spring"){
+            this.energy ++
+            this. muliply++
+        }
+        if(weath == "fall"){
+            this.energy --
+        }
     }
 }

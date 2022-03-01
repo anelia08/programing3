@@ -17,6 +17,21 @@ module.exports = class Flower extends LivingCreature{
             matrix[newY][newX] = 3;
 
         }
+
+        if(weath == "winter"){
+            this.energy -= 3
+            this. muliply -= 2
+        }
+        if(weath == "spring"){
+            this.energy += 4
+            this. muliply += 2
+        }
+        if(weath == "summer"){
+            this.multiply ++
+        }
+        if(weath == "fall"){
+            this.energy -= 2
+        }
     }
 }
 
