@@ -5,7 +5,7 @@ var socket = io();
 var side = 20;
 
 
-
+let weath = "spring"
 
 
 
@@ -13,7 +13,7 @@ var side = 20;
 function setup() {
     frameRate(5);
     createCanvas(25 * side, 25 * side);
-    background('#E0FFFF');
+    background("gray");
 
     
 
@@ -63,36 +63,37 @@ function nkarel(matrix) {
 
 
             if(matrix[y][x] == 3){
-                if(weath == "winter"){
-                    fill("#800000")
-                }
-                if(weath == "spring"){
-                    fill("#ff4d4d")
-                }
+        //         if(weath == "winter"){
+        //             fill("#800000")
+        //         }
+        //         if(weath == "spring"){
+        //             fill("#ff4d4d")
+        //         }
                 if(weath == "summer"){
                     fill("red")
                 }
-                if(weath == "fall"){
-                    fill("#b30000")
-                }
+        //         if(weath == "fall"){
+        //             fill("#b30000")
+        //         }
             }
 
 
             
           if(matrix[y][x] == 4){
-            if(weath == "winter"){
-                fill("#b30059")
-            }
-            if(weath == "spring"){
-                fill("#ff3385")
-            }
+        //     if(weath == "winter"){
+        //         fill("#b30059")
+        //     }
+        //     if(weath == "spring"){
+        //         fill("#ff3385")
+        //     }
             if(weath == "summer"){
                 fill("pink")
             }
-            if(weath == "fall"){
-                fill("#ed0c66")
+        //     if(weath == "fall"){
+        //         fill("#ed0c66")
             }
         }
+
             rect(x * side, y * side, side, side);
             }
         }

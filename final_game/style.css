@@ -1,0 +1,18 @@
+.content{
+    display: flex;
+	margin-top: 35px;
+	margin-bottom: 35px;
+    width: 1200px;
+	margin: auto;
+}
+
+.button{
+    color: red;
+}
+.gameInfo{
+    border: 2px solid black;
+    padding: 10px;
+    box-shadow: 2px 3px 2px gray;
+    margin: auto;
+
+}
