@@ -1,49 +1,57 @@
 <html>
-   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.14/p5.js"></script>
-    <script src="script.js"></script>
-   </head>
-   <body>
-         <div class="content">
-     <div class="gameInfo">
-      <h1 class="h1GameInfo">Game Description</h1>
-      <div class="characters">
-         <h2 class="charactInfo">Charecter Description</h2>
-         <p class="grassInfo">Grass- </p>
-         <p class="grassEatInfo">GrassEater- </p>
-         <p class="predInfo">Predator- </p>
-         <p class="floInfo">Flower- </p>
-         <p class="regenInfo">Regenerator- </p>
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+   <link rel="stylesheet" href="style.css">
+  
+</head>
+
+<body>
+   <div class="content">
+      <div class="gameInfo">
+         <h1 class="h1GameInfo">Game Description</h1>
+         <div class="box">
+            <div class="characters">
+               <h2 class="charactInfo">Charecter Description</h2>
+               <p class="grassInfo">Grass- </p>
+               <p class="grassEatInfo">GrassEater- eats Grass</p>
+               <p class="predInfo">Predator- eats GrassEater</p>
+               <p class="floInfo">Flower- whoever eats flower gets lives</p>
+               <p class="regenInfo">Regenerator- will produce new characters if less than 3</p>
+            </div>
+            <div class="seasons">
+               <h2 class="seasonInfo">Seasons</h2>
+               <p class="winter">Winter- less active</p>
+               <p class="spring">Spring- active</p>
+               <p class="summer">Summer- normal</p>
+               <p class="fall">Fall- normal</p>
+            </div>
+         </div>
       </div>
-      <div class="seasons">
-         <h2 class="seasonInfo">Seasons</h2>
-         <p class="winter">Winter-</p>
-         <p class="spring">Spring- </p>
-         <p class="summer">Summer- </p>
-         <p class="fall">Fall- </p>
-      </div>
-     </div>
-     <div class="controlPanel">
-        <h1 class="control">Control Panel</h1>
-      <div class="buttons">
-          <button class="button" type="button" onclick="AddGrass()">Add Grass</button>
-          <button class="button" type="button" onclick="AddGrassEater()">Add GrassEater</button>
-          <button class="button" type="button" onclick="AddPredator()">Add Predator</button>
-          <button class="button" type="button" onclick="AddFlower()">Add Flower</button>
-          <button class="button" type="button" onclick="AddRegenerator()">Add Regenerator</button>
-          <button class="button" type="button" onclick="winter()">Winter</button>
-          <button class="button" type="button" onclick="spring()">Spring</button>
-          <button class="button" type="button" onclick="summer()">Summer</button>
-          <button class="button" type="button" onclick="fall()">Fall</button>
-          <button class="button" type="button" onclick="kill()">Kill All</button>
+      <div class="controlPanel">
+         <h1 class="control">Control Panel</h1>
+         <div class="buttons">
+            <button class="button" type="button" onclick="AddGrass()">Add Grass</button>
+            <button class="button" type="button" onclick="AddGrassEater()">Add GrassEater</button>
+            <button class="button" type="button" onclick="AddPredator()">Add Predator</button>
+            <button class="button" type="button" onclick="AddFlower()">Add Flower</button>
+            <button class="button" type="button" onclick="AddRegenerator()">Add Regenerator</button>
+         <!-- <button class="button" type="button" onclick="winter()">Winter</button>
+            <button class="button" type="button" onclick="spring()">Spring</button>
+            <button class="button" type="button" onclick="summer()">Summer</button>
+            <button class="button" type="button" onclick="fall()">Fall</button> -->
+            <button class="button" type="button" onclick="kill()">Kill All</button> 
+         </div>
       </div>
    </div>
-</div>
-   </body>
+
+
+   <script src="/socket.io/socket.io.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.14/p5.js"></script>
+   <script src="script.js"></script>
+</body>
+
 </html>

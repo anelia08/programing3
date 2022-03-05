@@ -21,17 +21,17 @@ module.exports = class Predator extends LivingCreature{
             this.multiply = 0;
         }
         
-        if(weath == "winter"){
-            this.energy -= 3
-            this. muliply -= 2
-        }
-        if(weath == "spring"){
-            this.energy += 2
-            this. muliply += 3
-        }
-        if(weath == "fall"){
-            this.energy --
-        }
+        // if(weath == "winter"){
+        //     this.energy --
+        //     this. muliply --
+        // }
+        // if(weath == "spring"){
+        //     this.energy ++
+        //     this. muliply ++
+        // }
+        // if(weath == "fall"){
+        //     this.energy --
+        // }
         
     }
 

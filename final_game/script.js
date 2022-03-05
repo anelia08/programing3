@@ -5,24 +5,23 @@ var socket = io();
 var side = 20;
 
 
-let weath = "spring"
+ weath = "spring"
 
+socket.on('Weather', function (data) {
+    weath = data;
+    console.log(weath);
+})
 
 
 
 function setup() {
     frameRate(5);
     createCanvas(25 * side, 25 * side);
-    background("gray");
+    // background("gray");
 
     
 
 }
-
-socket.on("Weather", function (data) {
-    weath = data;
-    console.log(weath);
-})
 
 
 
@@ -30,75 +29,46 @@ function nkarel(matrix) {
     for (var y = 0; y < matrix.length; y++) {
         for (var x = 0; x < matrix[y].length; x++) {
             var obj = matrix[y][x];
+            if(obj == 0){
+                fill("gray")
+            }
             if(obj == 1){
-                if(weath == "winter"){
-                    fill("white")
-                }
-                if(weath == "spring"){
-                    fill("#8FBC8F")
-                }
-                if(weath == "summer"){
-                    fill("green")
-                }
-                if(weath == "fall"){
-                    fill("#556b2f")
+                if(weath == "summer") {
+                    fill("green");
+                }else if (weath == "autumn") {
+                    fill("#333300");
+                }else if (weath == "winter") {
+                    fill("white");
+                }else if (weath == "spring") {
+                    fill("#4dffa6");
                 }
             }
+        
 
 
             if(obj == 2){
-                if(weath == "winter"){
-                    fill("#cccc00")
-                }
-                if(weath == "spring"){
-                    fill("#ffff66")
-                }
-                if(weath == "summer"){
-                    fill("yellow")
-                }
-                if(weath == "fall"){
-                    fill("#ffb84d")
-                }
+                fill("yellow")
             }
 
 
-            if(matrix[y][x] == 3){
-        //         if(weath == "winter"){
-        //             fill("#800000")
-        //         }
-        //         if(weath == "spring"){
-        //             fill("#ff4d4d")
-        //         }
-                if(weath == "summer"){
-                    fill("red")
-                }
-        //         if(weath == "fall"){
-        //             fill("#b30000")
-        //         }
+            if(obj == 3){
+                fill("red")
             }
 
 
             
-          if(matrix[y][x] == 4){
-        //     if(weath == "winter"){
-        //         fill("#b30059")
-        //     }
-        //     if(weath == "spring"){
-        //         fill("#ff3385")
-        //     }
-            if(weath == "summer"){
+          if(obj == 4){
                 fill("pink")
-            }
-        //     if(weath == "fall"){
-        //         fill("#ed0c66")
-            }
+        }
+        if(obj == 5){
+            fill("#4169E1")
         }
 
             rect(x * side, y * side, side, side);
             }
         }
+    }
 
-}
 
 socket.on('send matrix', nkarel)
 
@@ -121,5 +91,5 @@ function AddRegenerator(){
     socket.emit("Add Regenerator")
 }
 function weather(){
- socket.emit("Weather")
+ socket.emit('Weather')
 } 

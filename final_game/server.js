@@ -136,7 +136,7 @@ function game() {
     io.sockets.emit('send matrix', matrix);
 }
 
-setInterval(game, 300)
+setInterval(game,600)
 
 
 function kill() {

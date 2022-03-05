@@ -1,18 +1,56 @@
+canvas{
+    margin-left: 1200px;
+    margin-bottom: 200px;
+    
+  }
+body{
+    background-color: #FFF0F5;
+}
+
 .content{
     display: flex;
 	margin-top: 35px;
 	margin-bottom: 35px;
-    width: 1200px;
+    width: 1500px;
 	margin: auto;
 }
 
 .button{
-    color: red;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1.5px solid black;
+    border-radius: 6px;
+    background-color: #fffaf0;
+}
+.button:hover{
+    background-color: #f8efde;
+    box-shadow: 2px 3px 2px black;
 }
 .gameInfo{
     border: 2px solid black;
     padding: 10px;
-    box-shadow: 2px 3px 2px gray;
+    box-shadow: 2px 3px 2px black;
     margin: auto;
-
+    background-color: #fffaf0;
+}
+.box{
+    display: flex;
+    margin-left: 50px;
+    margin-right: 55px;
+    margin-bottom: 20px;
+}
+.seasons{
+    margin-left: 25px;
+   
+}
+.h1GameInfo{
+    text-align: center;
+    margin-bottom: 30px;
+}
+.characters{
+    margin-right: 25px;
+    
+}
+.controlPanel{
+    margin-top: 50px;
 }

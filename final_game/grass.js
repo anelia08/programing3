@@ -31,16 +31,16 @@ module.exports = class Grass extends LivingCreature{
         }
 
 
-        if(weath == "winter"){
-            this.energy -= 2
-            this. muliply--
-        }
-        if(weath == "spring"){
-            this.energy += 2
-            this. muliply++
-        }
-        if(weath == "fall"){
-            this.energy -= 2
-        }
+        // if(weath == "winter"){
+        //     this.energy -= 2
+        //     this. muliply--
+        // }
+        // if(weath == "spring"){
+        //     this.energy += 2
+        //     this. muliply++
+        // }
+        // if(weath == "fall"){
+        //     this.energy -= 2
+        // }
     }
 }

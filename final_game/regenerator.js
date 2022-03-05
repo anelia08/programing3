@@ -43,15 +43,15 @@ module.exports = class Regenerator extends LivingCreature{
         }
 
 
-        if(weath == "winter"){
-            this.energy += 3
-        }
-        if(weath == "spring"){
-            this.energy ++
-            this. muliply++
-        }
-        if(weath == "fall"){
-            this.energy --
-        }
+        // if(weath == "winter"){
+        //     this.energy ++
+        // }
+        // if(weath == "spring"){
+        //     this.energy ++
+        //     this. muliply++
+        // }
+        // if(weath == "fall"){
+        //     this.energy --
+        // }
     }
 }
